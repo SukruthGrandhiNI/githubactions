@@ -2,6 +2,7 @@
 name: nimibot
 
 on:
+  push: #TBD
   pull_request:
     branches:
       - master
