@@ -1,14 +1,23 @@
-# This is a basic workflow to help you get started with Actions
 
 name: nimibot
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    types: # Not to run on Draft PR's TBD example  taken from here https://gist.github.com/myobie/671d2f2a1e503efa0c05e7b865c26a9d
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+    branches:
+      - master
+      - releases/*
+    paths-ignore:
+      - CHANGELOG.md
+      - CONTRIBUTING.md
+      - .gitattributes
+      - LICENSE
+      - VERSION
+    
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
