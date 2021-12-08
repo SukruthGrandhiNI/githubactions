@@ -11,6 +11,6 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
       - name: run system test1
-        uses: SukruthGrandhiNI/githubactions@master/
+        uses: ./CompositeAction/actions
         with:
           module_name: nidigital
