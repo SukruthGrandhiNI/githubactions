@@ -1,13 +1,21 @@
-name: "Run system tests"
-description: "Run system tests for the specified module"
-
+name: "Hello World"
+description: "Greet someone"
 inputs:
-  module_name:
-    description: "module name to run system tests"
+  who-to-greet: # id of input
+    description: "Who to greet"
     required: true
-
+    default: "World"
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.module_name }}.
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
+    - run: ${{ github.action_path }}/goodbye.sh
       shell: bash

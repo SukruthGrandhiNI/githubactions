@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: step one
         uses: actions/checkout@v2
-        
+
       - name: run system test1
         uses: SukruthGrandhiNI/githubactions@master
         with:
-          module_name: nidigital
+          who-to-greet: nidigital
