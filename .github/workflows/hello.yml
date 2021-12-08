@@ -3,11 +3,6 @@ name: nimibot
 
 on:
   pull_request:
-    types: # Not to run on Draft PR's TBD example  taken from here https://gist.github.com/myobie/671d2f2a1e503efa0c05e7b865c26a9d
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
     branches:
       - master
       - releases/*
