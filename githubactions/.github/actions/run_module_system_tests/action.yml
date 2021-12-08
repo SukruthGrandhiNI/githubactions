@@ -9,5 +9,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: checkout the repository
-      uses: actions/checkout@v2
+    - run: echo Hello ${{ inputs.module_name }}.
+      shell: bash
