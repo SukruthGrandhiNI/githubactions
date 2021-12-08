@@ -11,6 +11,6 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
       - name: run system test1
-        uses: ./.github/actions/run_module_system_tests
+        uses: ./.github/actions/run_module_system_tests@v2
         with:
           module_name: nidigital
