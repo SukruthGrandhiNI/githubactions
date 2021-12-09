@@ -14,9 +14,6 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
 
-      - name: step two
-        uses: echo ${{ matrix.node }}
-
       - name: run system test1
         uses: SukruthGrandhiNI/githubactions@master
         with:
