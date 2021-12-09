@@ -6,12 +6,18 @@ jobs:
   job1:
     name: First job
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["nidigital", "8", "10"]
 
     steps:
       - name: step one
         uses: actions/checkout@v2
 
+      - name: step two
+        uses: echo ${{ matrix.node }}
+
       - name: run system test1
         uses: SukruthGrandhiNI/githubactions@master
         with:
-          who-to-greet: nidigital
+          who-to-greet: ${{ matrix.node }}
