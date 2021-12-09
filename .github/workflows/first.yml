@@ -5,10 +5,11 @@ on: push
 jobs:
   job1:
     name: First job
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         node: ["nidigital", "1", "2", "3", "4", "5", "6", "7", "8", "10"]
+        os: ["ubuntu-latest", "windows-latest"]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: step one
