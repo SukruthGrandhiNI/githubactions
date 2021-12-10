@@ -4,6 +4,7 @@ inputs:
   module_name: 
     description: "module name"
     required: true
+    default: 'empyt'
 
 runs:
   using: "composite"
