@@ -26,4 +26,4 @@ jobs:
       - name: system_tests_win32
         uses: SukruthGrandhiNI/githubactions@master
         with:
-          module_name: ${{ matrix.node }}
+          module_name: ${{ matrix.module_name }}
