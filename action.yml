@@ -1,21 +1,23 @@
-name: "Hello World"
-description: "Greet someone"
+name: "Run system tests"
+description: "Run system tests for the specified module"
 inputs:
-  who-to-greet: # id of input
-    description: "Who to greet"
+  module_name: 
+    description: "module name"
     required: true
-    default: "World"
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+
 runs:
   using: "composite"
   steps:
-    - name: step one
+    - name: checkout repository
       uses: actions/checkout@v2
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - run: echo Hello ${{ inputs.module_namet }}.
       shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+    - run: |
+        cd generated
+        mkdir junit
+        mkdir kibana
+        cd ${{ parameters.module_name }}      
       shell: bash
+        
+      
+
