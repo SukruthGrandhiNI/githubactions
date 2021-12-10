@@ -16,7 +16,7 @@ runs:
         cd generated
         mkdir junit
         mkdir kibana
-        cd ${{ parameters.module_name }}      
+        cd ${{ inputs.module_name }}      
       shell: bash
         
       
