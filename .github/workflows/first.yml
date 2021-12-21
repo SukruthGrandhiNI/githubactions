@@ -24,6 +24,6 @@ jobs:
 
     steps:
       - name: system_tests_win32
-        uses: SukruthGrandhiNI/githubactions@master
+        uses: SukruthGrandhiNI/githubactions@master/.github/run_module_system_tests
         with:
           module_name: ${{ matrix.module_name }}
